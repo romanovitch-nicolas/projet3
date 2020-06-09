@@ -1,0 +1,467 @@
+		/* Général */
+
+html
+{
+	scroll-behavior: smooth;
+	background-color: #424242;
+	height: 100%;
+}
+
+body
+{
+	font-family: "Trebuchet MS", sans-serif;
+	color: #FFF;
+	text-align: center;
+	margin-top: 120px;
+	height: 100%;
+}
+
+section
+{
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #222;
+	width: 80%;
+	max-width: 1600px;
+	padding: 20px;
+}
+
+.invisible
+{
+	display: none;
+}
+
+
+		/* Menu de navigation */
+
+header
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	background-color: rgba(0,0,0,0.9);
+	height: 100px;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+
+#logo
+{
+	max-width: 200px;
+}
+
+ul
+{
+	list-style-type: none;
+	display: flex;
+	justify-content: center;
+}
+
+a
+{
+	color: #FFF;
+	text-decoration: none;
+}
+
+nav a
+{
+	margin-right: 40px;
+	font-size: 18px;
+}
+
+nav a:hover
+{
+    border-bottom: 3px solid #FFF;
+    padding-bottom: 5px;
+}
+
+#burger
+{
+	padding: 15px;
+	border-radius: 50%;
+	background-color: #000;
+	cursor: pointer;
+	display: none;
+}
+
+
+		/* Accueil */
+
+#accueil img, #infos img
+{
+	max-width: 100px;
+	float: left;
+}
+
+
+		/* Slider */
+
+.bulle
+{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #808080;
+	border-radius: 50px;
+	margin-right: 5px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.slide
+{
+	width: 100%;
+}
+
+#imagesslider
+{
+	position: relative;
+	max-width: 1200px;
+	margin: auto;
+	border: 3px solid #FFF;
+}
+
+#boutondroite
+{
+	position: absolute;
+	top: 45%;
+	right: 5px;
+}
+
+#boutongauche
+{
+	position: absolute;
+	top: 45%;
+	left: 5px;
+}
+
+.fa-chevron-right, .fa-chevron-left
+{
+	font-size: 2vw;
+	padding: 0.4vw;
+	padding-left: 0.8vw;
+	padding-right: 0.8vw;
+	border-radius: 50%;
+	background-color: #000;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.fa-chevron-right:hover, .fa-chevron-left:hover
+{
+	color: #000;
+	background-color: rgb(240, 240, 240);
+	opacity: 0.8;
+}
+
+.fa-pause, .fa-play
+{
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+figure
+{
+	margin: auto;
+	display: flex;
+}
+
+figure img
+{
+	width: 100%;
+	height: 100%;
+}
+
+figcaption
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 12%;
+	font-size: 1.5vw;
+}
+
+
+	/* Carte */
+
+#map
+{
+	max-width: 1000px;
+	height: 610px;
+	border: 3px solid white;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	width: 100%;
+	z-index: 1;
+}
+
+#station
+{
+	width: 450px;
+	height: 616px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#infostation, form
+{
+	border: 3px solid white;
+	background-color: #424242;
+}
+
+#mapstation
+{
+	display: flex;
+	justify-content: center;
+}
+
+
+	/* Bloc info */
+
+#btnreservation
+{
+	background-color: #FFF;
+	border: none;
+	padding: 4px 10px;
+	box-shadow: 0 3px #C0BABA;
+	margin: auto;
+	cursor: pointer;
+}
+
+#adressestation, #noreservation
+{
+	font-size: 14px;
+}
+
+#adressestation, #statutstation, #noreservation
+{
+	font-weight: bold;
+}
+
+#noreservation
+{
+	font-style: italic;
+}
+
+canvas
+{
+	background-color: #FFF;
+	margin-bottom: 10px;
+}
+
+#clear
+{
+	margin-right: 40px;
+}
+
+#clear, #submit
+{
+	background-color: #FFF;
+   	border: none;
+   	padding: 4px 10px;
+   	box-shadow: 0 3px #C0BABA;
+   	cursor: pointer;
+}
+
+#submit
+{
+	visibility: hidden;
+}
+
+.fa-check
+{
+	color: #09d93d;
+}
+
+
+	/* Formulaire */
+
+form
+{
+	padding-bottom: 15px;
+}
+
+form input
+{
+	padding: 3px 6px;
+	font-family: "Trebuchet MS", sans-serif;
+}
+
+#nom, #prenom
+{
+	font-size: 16px;
+}
+
+
+	/* Pied de page */
+
+footer
+{
+	background-color: rgba(0,0,0,0.9);
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+em
+{
+	font-size: 14px;
+}
+
+
+	/* Keyframes */
+
+@keyframes opacity {
+	0% {
+  		opacity: 0;
+	}
+	100% {
+    	opacity: 1;
+	}
+}
+
+@keyframes slide-in {
+	0% {
+  		opacity: 0;
+  		transform: translateY(-15%);
+	}
+	100% {
+    	opacity: 1;
+    	transform: translateY(0);
+	}
+}
+
+
+	/* Breakpoint */
+
+@media all and (min-width: 1200px)		/* Grosses résolutions */
+{
+	figcaption
+	{
+		font-size: 20px;
+	}
+}
+
+@media all and (max-width: 1024px)		/* Petites résolutions, Tablettes */
+{
+	/* Menu de Navigation */
+	nav
+	{
+		position: absolute;
+	    right: 7%;
+	    top: 80px;
+	}
+
+	ul
+	{
+	    flex-direction: column;
+	    background-color: rgba(0,0,0,0.9);
+	    padding: 0;
+	}
+
+	li
+	{
+		border: 1px solid white;
+		width: 200px;
+		line-height: 40px;
+	}
+
+	nav a
+	{
+		margin-right: 0;
+	}
+
+	nav a:hover
+	{
+	    border: none;
+	}
+
+	#burger
+	{
+		display: block;
+	}
+
+	/* Carte/Bloc Infos */
+	#mapstation
+	{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#map
+	{
+		margin-right: 0;
+		height: 350px;
+	}
+
+	#station
+	{
+		height: 100%;
+		max-width: 450px;
+		width: 100%;
+	}
+
+	#infostation
+	{
+		margin-bottom: 15px;
+	}
+}
+
+@media all and (max-width: 767px)		/* Smartphones */
+{
+	/* Général*/
+	#accueil img, #infos img
+	{
+		float: none;
+	}
+
+	section
+	{
+		width: inherit;
+	}
+
+	input
+	{
+		-webkit-appearance: none;
+	}
+
+	/* Slider */
+	figcaption
+	{
+		font-size: 10px;
+		position: inherit;
+	}
+
+	figure
+	{
+		flex-direction: column;
+	}
+
+	.fa-chevron-right, .fa-chevron-left
+	{
+		font-size: 5vw;
+		padding: 1vw;
+		padding-left: 1.4vw;
+		padding-right: 1.4vw;
+	}
+
+	.fa-chevron-right:hover, .fa-chevron-left:hover
+	{
+		color: inherit;
+		background-color: #000;
+		opacity: 0.8;
+	}
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="images/favicon.png" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+		<link rel="stylesheet" href="fontawesome/css/all.css" />
+		<link rel="stylesheet" href="style.css" />
+		<title>VéloStan Nancy : Location de vélos libre-service à Nancy</title>
+		<meta name="description" content="Besoin d'un vélo ? Réservez-le en quelques clics grâce à vélOstan’lib ! Déplacez-vous librement de jour comme de nuit dans l’agglomération de Nancy." />
+		<meta name="keywords" content="Nancy,velostan,velib,vélo,réservation,réserver,location,louer,transport,station,OpenClassrooms" />
+		<meta property="og:title" content="VéloStan Nancy : Location de vélos libre-service à Nancy" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="index.html" />
+		<meta property="og:image" content="images/logo2.png" />
+		<meta property="og:description" content="Besoin d'un vélo ? Réservez-le en quelques clics grâce à vélOstan’lib ! Déplacez-vous librement de jour comme de nuit dans l’agglomération de Nancy." />
+	</head>
+
+	<body>
+		<header>
+			<a href="index.html"><img id="logo" src="images/logo.png" alt="Logo vélOstan" /></a>
+			<nav>
+				<ul>
+					<li><a href="#accueil">Accueil</a></li>
+					<li><a href="#tuto">Comment réserver</a></li>
+					<li><a href="#carte">Trouver mon vélo</a></li>
+					<li><a href="#infos">Mes réservations</a></li>
+				</ul>
+			</nav>
+			<i id="burger" class="fas fa-bars fa-2x"></i>
+		</header>
+
+		<section id="accueil">
+			<img id="logo2" src="images/logo2.png" alt="Logo vélOstan’lib" />
+			<h1>Bienvenue sur VéloStan, le site de location de vélib à Nancy !</h1>
+			<p>Louez et restituez votre vélo sur toutes les bornes de la ville.<br />
+			Ouvert <strong>7j/7</strong> et <strong>24h/24</strong>, vélOstan’lib vous permet de vous déplacer librement de jour comme de nuit dans l’agglomération.</p>
+		</section>
+
+		<section id="tuto">
+			<h2>Comment réserver ?</h2>
+			<div id="imagesslider">
+				<figure class="slide">
+					<img src="images/slide1.jpg" alt="Slide 1" />
+					<figcaption><p>Besoin d'un vélo ? Réservez-le en quelques clics !</p></figcaption>
+				</figure>
+				<figure class="slide">
+					<img src="images/slide2.jpg" alt="Slide 2" />
+					<figcaption><p>Choisissez votre station.</p></figcaption>
+				</figure>
+				<figure class="slide">
+					<img src="images/slide3.jpg" alt="Slide 3" />
+					<figcaption><p>Cliquez sur "Réserver", et remplissez le formulaire.</p></figcaption>
+				</figure>
+				<figure class="slide">
+					<img src="images/slide4.jpg" alt="Slide 4" />
+					<figcaption><p>C'est tout ! Soyez prudent !</p></figcaption>
+				</figure>
+				<i id="boutongauche" class="fas fa-chevron-left"></i>
+				<i id="boutondroite" class="fas fa-chevron-right"></i>
+			</div>
+			<div class="bulle"></div>
+			<div class="bulle"></div>
+			<i id="pause" class="fas fa-pause"></i>
+			<i id="play" class="fas fa-play invisible"></i>
+			<div class="bulle"></div>
+			<div class="bulle"></div>
+		</section>
+
+		<section id="carte">
+			<h2>Trouver mon vélo</h2>
+			<div id="mapstation">
+				<div id="map"></div>
+				<div id="station">
+					<div id="infostation">
+						<h3 id="nomstation">Choisissez une station</h3>
+						<p id="adressestation"></p>
+						<p id="statutstation"></p>
+						<p id="velostation"></p>
+						<p id="placestation"></p>
+						<input id="btnreservation" class="invisible" type="button" value="Réserver" />
+						<p id="noreservation"></p>
+					</div>
+					<form class="invisible">
+						<p><input id="prenom" type="text" name="prenom" placeholder="Prénom" /></p>
+						<p><input id="nom" type="text" name="nom" placeholder="Nom" /></p>
+						<p>Signature :</p>
+						<canvas width="250" height="150">
+							Votre navigateur ne supporte pas la signature en ligne.
+						</canvas>
+						<div>
+							<input id="clear" type="button" value="Effacer" />
+							<input id="submit" type="button" value="Valider" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<section id="infos">
+			<img src="images/info.png" alt="Logo information" />
+			<h2>Mes réservations</h2>
+			<p id="reservation">Vous n'avez pas de réservation.</p>
+		</section>
+
+		<footer>
+			<p><a href="http://www.velostanlib.fr/">Conditions d'utilisation</a> || Mentions légales</p>
+			<p>Copyright © 2019 - VéloStan Nancy<br />
+			<em>Ce site est un projet OpenClassrooms et n'est en aucun cas lié à VéloStan Nancy.</em></p>
+		</footer>
+
+		<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+   		<script src="js/ajax.js"></script>
+   		<script src="js/canvas.js"></script>
+		<script src="js/form.js"></script>
+		<script src="js/map.js"></script>
+		<script src="js/menu.js"></script>
+		<script src="js/slider.js"></script>
+		<script src="js/timer.js"></script>
+	</body>
+</html>
